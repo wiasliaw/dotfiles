@@ -13,3 +13,7 @@ indent_style = space
 [*.sol]
 indent_size = 4
 indent_style = space
+
+[.gitconfig]
+indent_size = 4
+indent_style = tab
