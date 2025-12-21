@@ -1,0 +1,5 @@
+# Disable paging (show output directly without pager)
+--paging=never
+
+# Show only changes (minimal style)
+--style="changes"
