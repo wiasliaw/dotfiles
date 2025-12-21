@@ -1,0 +1,28 @@
+[hub]
+	protocol = ssh
+
+[init]
+	defaultBranch = main
+
+[core]
+    autocrlf = input
+    editor = hx
+    pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+    line-numbers = true
+
+[pull]
+	ff = only
+
+[push]
+	autoSetupRemote = true
+
+[merge]
+    conflictstyle = diff3
