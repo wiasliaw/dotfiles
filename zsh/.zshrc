@@ -49,7 +49,7 @@ zinit light zsh-users/zsh-completions
 
 # alias
 alias vim="hx"
-alias cat='bat --paging=never --style="changes"'
+alias cat="bat"
 alias diff="delta"
 alias find="fd"
 alias ls="eza"
