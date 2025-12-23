@@ -55,6 +55,6 @@ alias find="fd"
 alias ls="eza"
 alias tree="eza --tree --git-ignore"
 alias ps="procs"
-alias htop="btm --basic"
+alias htop="btm"
 alias grep='rg'
 # end alias
