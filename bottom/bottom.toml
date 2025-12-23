@@ -1,0 +1,153 @@
+# =============================================================================
+# Bottom Configuration - Catppuccin Frappé Theme
+# =============================================================================
+# Location: ~/.config/bottom/bottom.toml (Linux/macOS)
+#           ~/Library/Application Support/bottom/bottom.toml (macOS alt)
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# General Settings
+# -----------------------------------------------------------------------------
+[flags]
+# Use dot markers for cleaner graph appearance
+dot_marker = true
+
+# Hide average CPU to reduce visual noise
+hide_avg_cpu = true
+
+# Refresh rate in milliseconds (1 second)
+rate = 1000
+
+# Data retention period
+retention = "10m"
+
+# Hide spacing between table headers and entries for compact look
+hide_table_gap = true
+
+# Show scroll position in tables
+show_table_scroll_position = true
+
+# Temperature unit: "c" for Celsius, "f" for Fahrenheit, "k" for Kelvin
+temperature_type = "c"
+
+# Memory legend position
+memory_legend = "none"
+
+# Network legend position
+network_legend = "none"
+
+# -----------------------------------------------------------------------------
+# Process Widget Settings
+# -----------------------------------------------------------------------------
+[processes]
+# Minimal columns for a cleaner view
+columns = ["pid", "name", "cpu%", "mem%", "state"]
+
+# -----------------------------------------------------------------------------
+# CPU Widget Settings
+# -----------------------------------------------------------------------------
+[cpu]
+# Default to showing all cores
+default = "all"
+
+# -----------------------------------------------------------------------------
+# Layout - Clean & Minimal Design
+# -----------------------------------------------------------------------------
+# ┌─────────────────────────────────────────┐
+# │                  CPU                    │
+# ├───────────────────┬─────────────────────┤
+# │      Memory       │      Network        │
+# ├───────────────────┴─────────────────────┤
+# │               Processes                 │
+# │                                         │
+# └─────────────────────────────────────────┘
+
+[[row]]
+  ratio = 1
+  [[row.child]]
+    type = "cpu"
+
+[[row]]
+  ratio = 1
+  [[row.child]]
+    ratio = 1
+    type = "mem"
+  [[row.child]]
+    ratio = 1
+    type = "net"
+
+[[row]]
+  ratio = 2
+  [[row.child]]
+    type = "proc"
+
+# -----------------------------------------------------------------------------
+# Catppuccin Frappé Color Scheme
+# -----------------------------------------------------------------------------
+# Palette Reference:
+#   Base:      #303446    Rosewater: #f2d5cf    Green:  #a6d189
+#   Surface0:  #414559    Flamingo:  #eebebe    Teal:   #81c8be
+#   Surface1:  #51576d    Pink:      #f4b8e4    Sky:    #99d1db
+#   Overlay0:  #737994    Mauve:     #ca9ee6    Blue:   #8caaee
+#   Text:      #c6d0f5    Red:       #e78284    Lavender: #babbf1
+#   Subtext0:  #a5adce    Peach:     #ef9f76    Yellow: #e5c890
+
+[styles]
+
+# Widget borders and general styling
+[styles.widgets]
+border_color = "#737994"
+selected_border_color = "#8caaee"
+widget_title = { color = "#c6d0f5", bold = true }
+text = { color = "#c6d0f5" }
+selected_text = { color = "#303446", bg_color = "#8caaee" }
+disabled_text = { color = "#737994" }
+
+# Table headers
+[styles.tables]
+headers = { color = "#babbf1", bold = true }
+
+# CPU colors - using varied Catppuccin colors for each core
+[styles.cpu]
+all_entry_color = "#f2d5cf"
+avg_entry_color = "#a5adce"
+cpu_core_colors = [
+  "#8caaee",   # Blue
+  "#a6d189",   # Green
+  "#ca9ee6",   # Mauve
+  "#ef9f76",   # Peach
+  "#81c8be",   # Teal
+  "#f4b8e4",   # Pink
+  "#e5c890",   # Yellow
+  "#99d1db",   # Sky
+  "#eebebe",   # Flamingo
+  "#85c1dc",   # Sapphire
+  "#babbf1",   # Lavender
+  "#e78284",   # Red
+]
+
+# Memory colors
+[styles.memory]
+ram_color = "#8caaee"
+cache_color = "#737994"
+swap_color = "#ca9ee6"
+arc_color = "#81c8be"
+gpu_colors = ["#a6d189", "#ef9f76", "#f4b8e4"]
+
+# Network colors
+[styles.network]
+rx_color = "#a6d189"
+tx_color = "#ef9f76"
+rx_total_color = "#a6d189"
+tx_total_color = "#ef9f76"
+
+# Battery colors (if using laptop)
+[styles.battery]
+high_battery_color = "#a6d189"
+medium_battery_color = "#e5c890"
+low_battery_color = "#e78284"
+
+# Graph styling
+[styles.graphs]
+graph_color = "#51576d"
+legend_text = { color = "#a5adce" }
