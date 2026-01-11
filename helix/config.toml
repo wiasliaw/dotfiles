@@ -48,7 +48,7 @@ tab = "→"
 tabpad = "·"
 newline = "⏎"
 
-[editor.gutespace]
+[editor.gutter]
 layout = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
 
 [editor.soft-wrap]
