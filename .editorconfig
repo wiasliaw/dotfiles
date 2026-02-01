@@ -16,4 +16,4 @@ indent_style = space
 
 [.gitconfig]
 indent_size = 4
-indent_style = tab
+indent_style = space
