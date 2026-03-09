@@ -2,30 +2,6 @@
 
 Personal development environment configurations for macOS.
 
-## Overview
-
-This repository contains configuration files for various development tools. Each tool has its own directory with configurations meant to be symlinked or copied to the appropriate locations in your home directory.
-
-## Repository Structure
-
-```
-.
-├── git/
-│   └── .gitconfig             # Git configuration
-├── zsh/
-│   ├── .zshenv                # Environment variables (Cargo, uv)
-│   ├── .zprofile              # Login shell config (Homebrew, SSH agent, OrbStack)
-│   └── .zshrc                 # Interactive shell config (oh-my-zsh, aliases)
-├── solhint/
-│   ├── .solhint.json          # Solidity linter configuration
-│   └── README.md              # Solhint documentation
-├── typescript-eslint/
-│   ├── .eslintrc.json         # TypeScript ESLint configuration
-│   └── README.md              # TypeScript ESLint documentation
-├── .editorconfig              # Editor formatting rules
-└── CLAUDE.md                  # Instructions for Claude Code
-```
-
 ## Prerequisites
 
 ### Required Tools
@@ -57,39 +33,6 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 - [Bitwarden](https://bitwarden.com/) - SSH agent integration
 - [OrbStack](https://orbstack.dev/) - Docker Desktop alternative for macOS
-
-## Installation
-
-Clone this repository and create symlinks to the configuration files:
-
-```bash
-# Clone the repository
-git clone https://github.com/wiasliaw/dotfiles.git ~/dotfiles
-cd ~/dotfiles
-
-# Git configuration
-ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
-
-# Zsh configuration (all three files)
-ln -sf ~/dotfiles/zsh/.zshenv ~/.zshenv
-ln -sf ~/dotfiles/zsh/.zprofile ~/.zprofile
-ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
-
-# EditorConfig
-ln -sf ~/dotfiles/.editorconfig ~/.editorconfig
-
-# Solhint (for Solidity projects)
-ln -sf ~/dotfiles/solhint/.solhint.json ~/.solhint.json
-
-# TypeScript ESLint (for TypeScript projects)
-ln -sf ~/dotfiles/typescript-eslint/.eslintrc.json ~/.eslintrc.json
-```
-
-After symlinking, reload your shell:
-
-```bash
-source ~/.zshrc
-```
 
 ## Configuration Details
 
@@ -139,24 +82,6 @@ Consistent formatting rules across editors:
 - **Solidity**: 4 spaces
 - **Git config**: tabs (4-space width)
 - UTF-8 encoding, LF line endings
-
-### Solhint
-
-Solidity linter configuration extending `solhint:recommended`:
-- Enforces payable fallback functions
-- Limits revert reason strings to 32 characters
-- Requires leading underscore for private variables
-
-See [solhint/README.md](solhint/README.md) for details.
-
-### TypeScript ESLint
-
-ESLint configuration for TypeScript projects (`.ts` files only):
-- **Base**: `airbnb-typescript/base`
-- **Parser**: `@typescript-eslint/parser`
-- Disables `import/no-extraneous-dependencies` check
-
-See [typescript-eslint/README.md](typescript-eslint/README.md) for installation instructions.
 
 ## Customization
 
